@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- root "application#hello"
+ root 'toppages#index'
  get "hello" => "hello#view" #追加
 end
 

@@ -1,5 +1,6 @@
 class HelloController < ApplicationController
  def view
- @msg = ‘こんにちは！’
+ @msg = 'こんにちは！'
  end
 end
+
