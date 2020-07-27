@@ -1,10 +1,26 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <div id="main">
+          <section id="List">
+              <h2>業務管理システム一覧</h2>
+              <ul>
+                  <li>
+                     <a href="../../../../業務内容・状況/app/view/messages/index.html.erb">業務内容・状況</a>
+                  </li>
+                  <li>
+                     <a href="../../../../業務報告/realtime-chat/index.html">業務報告</a>
+                  </li>
+                  <li>
+                     <a href="../../../../勤務管理/app/view/messages/index.html.erb">勤務管理</a>
+                  </li>
+              </ul>
+          </section>
+  </div>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
-      <h1>Welcome to the Microposts</h1>
+      <h1>Welcome to the Business management system</h1>
       <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
     </div>
   </div>
 <% end %>
+
