@@ -1,0 +1,29 @@
+<h1>業務内容・状況一覧</h1>
+
+<% if @business_statues.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>会社名</th>
+        <th>業務内容</th>
+        <th>処理期限日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @business_statues.each do |business_statue| %>
+        <tr>
+          <td><%= link_to business_statue.id, business_statue %></td>
+          <td><%= business_statue.Customer %></td>
+          <td><%= business_statue.Business %></td>
+          <td><%= business_statue.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @business_statues %>
+  </div>
+<% end %>
+
+<%= link_to '業務内容・状況　新規登録', business_statues/new, class: "btn btn-primary" %>

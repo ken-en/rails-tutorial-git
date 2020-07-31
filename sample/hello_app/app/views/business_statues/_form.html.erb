@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-6">
+    <%= form_with(model: business_statue, local: true) do |f| %>
+      <% if business_statue.errors.any? %>
+        <div id="error_explanation" class="alert alert-warning">
+          <ul class="mb-0">
+            <% business_statue.errors.full_business_statues.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label :Customer, '会社名' %>
+        <%= f.text_field :Customer, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Business, '業務内容' %>
+        <%= f.text_field :Business, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :date, '処理期限日' %>
+        <%= f.text_field :date, class: 'form-control' %>
+      </div>
+      <p>
+        <label for="Situation">状況：</label>
+        <select id="Situation" name="Situation">
+        <option value="noar">未着手</option>
+        <option value="ar">作成済み</option>
+        <option value="pr">提出済み</option>
+        </select>
+      </p>
+      <%= f.submit '登録', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to '業務内容・状況一覧に戻る', business_statues, class: "btn btn-primary" %>

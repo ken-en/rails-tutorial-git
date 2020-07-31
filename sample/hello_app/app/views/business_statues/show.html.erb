@@ -1,0 +1,24 @@
+<h1>id: <%= @business_statue.id %> の業務内容・状況 詳細</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @business_statue.id %></td>
+  </tr>
+  <tr>
+    <th>会社名</th>
+    <td><%= @business_statue.Customer %></td>
+  </tr>
+  <tr>
+    <th>業務内容</th>
+    <td><%= @business_statue.Business %></td>
+  </tr>
+  <tr>
+    <th>処理期限日</th>
+    <td><%= @business_statue.date %></td>
+  </tr>
+</table>
+
+<%= link_to 'この業務内容・状況を編集する', business_statues/:id/edit, class: 'btn btn-light' %>
+<%= link_to 'この業務内容・状況を削除する', @business_statue, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<%= link_to '業務内容・状況一覧に戻る', business_statues, class: "btn btn-primary" %>

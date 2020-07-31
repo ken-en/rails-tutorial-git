@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     password = params[:session][:password]
     if login(email, password)
       flash[:success] = 'ログインに成功しました。'
-      render :toppages#index
+      redirect_to  controller: :toppages, action: :index
     else
       flash.now[:danger] = 'ログインに失敗しました。'
       render :new
