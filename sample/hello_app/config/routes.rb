@@ -9,7 +9,7 @@ Rails.application.routes.draw do
  get 'signup', to: 'users#new'
  resources :users, only: [:index, :new, :create]
 
- 
+ get 'business_statues/new', to: 'business_statues#new'
  get 'business_statues/:id', to: 'business_statues#show'
  post 'business_statues', to: 'business_statues#create'
  put 'business_statues/:id', to: 'business_statues#update'
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
  get 'business_statues', to: 'business_statues#index'
 
  
- get 'business_statues/new', to: 'business_statues#new'
+
 
  
  get 'business_statues/:id/edit', to: 'business_statues#edit'

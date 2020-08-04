@@ -33,9 +33,24 @@
         <option value="pr">提出済み</option>
         </select>
       </p>
+      
+      <form action="cgi-bin/abc.cgi" method="post">
+      <p>
+      <input type="radio" name="Situation" value="noar" checked="checked">未着手
+      <input type="radio" name="Situation" value="ar">作成済み
+      <input type="radio" name="Situation" value="pr">提出済み
+      </p>
+      </form>
+      
+      <p class="radio-area">
+         <input type="radio" name="Situation" value="noar" checked="checked">未着手
+         <input type="radio" name="Situation" value="ar">作成済み
+         <input type="radio" name="Situation" value="pr">提出済み
+      </p>
+      
       <%= f.submit '登録', class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
 
-<%= link_to '業務内容・状況一覧に戻る', business_statues, class: "btn btn-primary" %>
+<%= link_to '業務内容・状況一覧に戻る', "/business_statues", class: "btn btn-primary" %>
