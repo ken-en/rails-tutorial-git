@@ -25,30 +25,13 @@
         <%= f.label :date, '処理期限日' %>
         <%= f.text_field :date, class: 'form-control' %>
       </div>
-      <p>
-        <label for="Situation">状況：</label>
-        <select id="Situation" name="Situation">
-        <option value="noar">未着手</option>
-        <option value="ar">作成済み</option>
-        <option value="pr">提出済み</option>
-        </select>
-      </p>
-      
-      <form action="cgi-bin/abc.cgi" method="post">
-      <p>
-      <input type="radio" name="Situation" value="noar" checked="checked">未着手
-      <input type="radio" name="Situation" value="ar">作成済み
-      <input type="radio" name="Situation" value="pr">提出済み
-      </p>
-      </form>
-      
-      <p class="radio-area">
-         <input type="radio" name="Situation" value="noar" checked="checked">未着手
-         <input type="radio" name="Situation" value="ar">作成済み
-         <input type="radio" name="Situation" value="pr">提出済み
-      </p>
-      
-      <%= f.submit '登録', class: 'btn btn-primary' %>
+      <div class="form-group">
+        <%= f.label :Situation, '状況' %>
+        <%= f.select :Situation, {'未着手': 1, '作成済み': 2, '提出済み': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      </div>
+      <div class="form-group">
+        <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+      </div>
     <% end %>
   </div>
 </div>

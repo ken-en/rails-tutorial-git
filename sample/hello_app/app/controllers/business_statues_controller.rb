@@ -52,6 +52,6 @@ class BusinessStatuesController < ApplicationController
 
   # Strong Parameter
   def business_statue_params
-    params.require(:business_statue).permit(:content)
+    params.require(:business_statue).permit(:content, :customer, :business, :date)
   end
 end

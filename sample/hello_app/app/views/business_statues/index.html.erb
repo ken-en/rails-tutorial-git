@@ -13,7 +13,7 @@
     <tbody>
       <% @business_statues.each do |business_statue| %>
         <tr>
-          <td><%= link_to "/business_statues/#{@business_statue.id}", business_statue %></td>
+          <td><%= link_to "/business_statues/#{business_statue.id}", 'business_statues/:id' %></td>
           <td><%= business_statue.Customer %></td>
           <td><%= business_statue.Business %></td>
           <td><%= business_statue.date %></td>
