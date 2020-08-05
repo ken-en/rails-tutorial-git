@@ -12,13 +12,13 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :Customer, '会社名' %>
-        <%= f.text_field :Customer, class: 'form-control' %>
+        <%= f.label :customer, '会社名' %>
+        <%= f.text_field :customer, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :Business, '業務内容' %>
-        <%= f.text_field :Business, class: 'form-control' %>
+        <%= f.label :business, '業務内容' %>
+        <%= f.text_field :business, class: 'form-control' %>
       </div>
 
       <div class="form-group">
@@ -26,8 +26,8 @@
         <%= f.text_field :date, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :Situation, '状況' %>
-        <%= f.select :Situation, {'未着手': 1, '作成済み': 2, '提出済み': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+        <%= f.label :situation, '状況' %>
+        <%= f.select :situation, {'未着手': 1, '作成済み': 2, '提出済み': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
       </div>
       <div class="form-group">
         <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
