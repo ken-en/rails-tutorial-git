@@ -1,4 +1,4 @@
-<h1>id: <%= @business_statue.id %> の業務内容・状況 詳細</h1>
+<h3>id: <%= @business_statue.id %> の業務内容・状況 詳細</h3>
 
 <table class="table table-bordered">
   <tr>
@@ -19,6 +19,6 @@
   </tr>
 </table>
 
-<%= link_to 'この業務内容・状況を編集する', business_statues/:id/edit, class: 'btn btn-light' %>
+<%= link_to 'この業務内容・状況を編集する', "business_statues/#{@business_statue.id}/edit", class: 'btn btn-light' %>
 <%= link_to 'この業務内容・状況を削除する', @business_statue, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
-<%= link_to '業務内容・状況一覧に戻る', business_statues, class: "btn btn-primary" %>
+<%= link_to '業務内容・状況一覧に戻る', business_statues_path, class: "btn btn-primary" %>

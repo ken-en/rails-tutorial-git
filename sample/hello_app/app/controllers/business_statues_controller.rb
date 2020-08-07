@@ -1,7 +1,7 @@
 class BusinessStatuesController < ApplicationController
 
   def index 
-    @business_statues = BusinessStatue.all
+    @business_statues = BusinessStatue.all.order(date: "DESC").page(params[:page]).per(10)
   end
   
   def show 
