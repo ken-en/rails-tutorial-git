@@ -17,7 +17,7 @@ class BusinessStatuesController < ApplicationController
 
     if @business_statue.save
       flash[:success] = 'Business_statue が正常に投稿されました'
-      redirect_to @business_statue
+      redirect_to business_statues_path
     else
       flash.now[:danger] = 'Business_statue が投稿されませんでした'
       render :new

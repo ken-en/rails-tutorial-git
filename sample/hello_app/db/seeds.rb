@@ -19,5 +19,10 @@ ActiveRecord::Schema.define(version: 2020_07_18_111845) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  @company             = Company .new
+  @company.name        = 'company1'
+  @company.work_description        = 'work'
+  @company.limit_date   = '2018-10-10'
+  @company.state        = 'todo'
+  @company.save
 end
