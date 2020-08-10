@@ -51,7 +51,7 @@
       <td><%= t.work_description %></td>
       <td>
         <!-- 次のタスク詳細取得画面へのリンク -->
-        <a href="/companys/<%= t.id %>">edit</a>
+        <a href="/companys/:id/<%= t.id %>">edit</a>
       </td>
       <td>
          <form method="POST" action="/tasks/<%= t.id %>">
