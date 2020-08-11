@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
+
   def index
-   @works  = Work.order('limit_date').all
-   @status = ['todo', 'doing', 'done']
+   @works = Companies.order('limit_date').all
   end
 
   def show
@@ -23,7 +23,6 @@ class CompaniesController < ApplicationController
   def update
    id = params[:id]
     company = Company.find(1)
-
     company.name       = params[:name]
     company.work_description      = params[:work_description]
     company.limit_date = params[:limit_date]

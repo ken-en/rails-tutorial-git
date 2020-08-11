@@ -27,11 +27,11 @@ Rails.application.routes.draw do
  get 'business_statues', to: 'business_statues#index'
  get 'business_statues/:id/edit', to: 'business_statues#edit'
 
-  get '/companys', to: 'companys#index'
-  post '/companys', to: 'companys#store'
-  get '/companys/:id', to: 'companys#show'
-  put '/companys/:id', to: 'companys#update'
-  delete '/companys/:id', to: 'companys#destroy'
+  get '/companies', to: 'companies#index'
+  post '/companies', to: 'companies#store'
+  get '/companies/:id', to: 'companies#show'
+  put '/companies/:id', to: 'companies#update'
+  delete '/companies/:id', to: 'companies#destroy'
 
 
 get "hello" => "hello#view" #追加

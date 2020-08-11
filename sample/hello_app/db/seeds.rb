@@ -19,9 +19,4 @@ ActiveRecord::Schema.define(version: 2020_07_18_111845) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  @task              = Task.new
-  @task.task         = 'task1'
-  @task.state        = 'todo'
-  @task.limit_date   = '2018-10-10'
-  @task.save
 end
