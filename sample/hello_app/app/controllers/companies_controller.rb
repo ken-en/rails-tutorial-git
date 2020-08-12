@@ -1,7 +1,8 @@
 class CompaniesController < ApplicationController
 
   def index
-   @works = Companies.order('limit_date').all
+   @companies = Company.all
+   @status = ['todo', 'doing', 'done'] 
   end
 
   def show

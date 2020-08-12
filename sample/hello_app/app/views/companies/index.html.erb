@@ -1,7 +1,7 @@
 <form method="POST" action="/tasks">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <div>
-    <label for="company">Company Name</label>
+    <label for="company">会社名</label>
     <input id="company" name="company" type="text" required>                
   </div>
   <div>
@@ -21,7 +21,7 @@
     <label>Task Limit Day</label>
   </div>
   <p>
-    <button type="submit">create</button>
+    <button type="submit">検索</button>
   </p>
 </div>
 </form>
@@ -43,7 +43,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @companys.each do |t| %>
+    <% @companies.each do |t| %>
     <tr>
       <td><%= t.name %></td>
       <td><%= t.state %></td>
