@@ -1,29 +1,6 @@
-<form method="POST" action="/tasks">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <div>
-    <label for="company">会社名</label>
-    <input id="company" name="company" type="text" required>                
-  </div>
-  <div>
-    <label for="task">Task Name</label>
-    <input id="task" name="task" type="text" required>
-  </div>
-  <div>
-    <select name="state">
-      <% @status.each_with_index do |s,i| %>
-      <option value="<%= s %>"><%= s %></option>
-      <% end %>
-    </select>
-    <label>Task State</label>
-  </div>
-  <div>
-    <input type="date" name="limit_date" required>
-    <label>Task Limit Day</label>
-  </div>
-  <p>
-    <button type="submit">検索</button>
-  </p>
-</div>
+<form method="get" action="/companies">
+ 会社名：<input type="text" name="company_name" /><br />
+ <input type="submit" value="送信" />
 </form>
 
 <!-- flashメッセージを表示 -->

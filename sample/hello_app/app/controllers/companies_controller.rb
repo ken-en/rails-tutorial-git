@@ -1,13 +1,13 @@
 class CompaniesController < ApplicationController
 
   def index
-   @companies = Company.all
+   @companies =Company.all
    @status = ['todo', 'doing', 'done'] 
   end
 
   def show
     id      = params[:id]
-    @work   = work.find(id)
+    @companies   = Company.find(id)
     @status = ['todo', 'doing', 'done']
   end
 

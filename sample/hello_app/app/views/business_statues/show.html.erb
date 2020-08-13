@@ -20,7 +20,7 @@
 </table>
 
 <%= link_to 'この業務内容・状況を編集する', "/business_statues/#{@business_statue.id}/edit", class: 'btn btn-light' %>
-<%= link_to 'この業務内容・状況を削除する', "/business_statues/:id", method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<%= link_to 'この業務内容・状況を削除する', "/business_statues/#{@business_statue.id}", method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
 <%= link_to '業務内容・状況一覧に戻る', business_statues_path, class: "btn btn-primary" %>
 
 
