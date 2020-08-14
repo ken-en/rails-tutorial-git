@@ -2,13 +2,13 @@ class CompaniesController < ApplicationController
 
   def index
    @status = ['todo', 'doing', 'done'] 
-   @companies =Company.all
-   
-   if params.has_key?(:company_name) then
-    Company.find_by(name: params[:company_name]).order(limit_date: "DESC")
+   if params.has_key?(:company_name)
+     @companies  =  Company.where(name: params[:company_name]).order(limit_date: "DESC")
    else
-    Company.all.order(limit_date: "DESC")
+     @companies = Company.all.order(limit_date: "DESC")   
+   end
   end
+  
   
   def show
     id      = params[:id]
