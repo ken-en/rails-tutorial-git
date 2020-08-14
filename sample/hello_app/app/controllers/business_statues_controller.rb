@@ -14,7 +14,7 @@ class BusinessStatuesController < ApplicationController
 
   def create 
     @business_statue = BusinessStatue.new(business_statue_params)
-    company = Company.find(name: params[:company_name])
+    company = Company.find_by(name: params[:company_name])
     business_statue.company_id = company.id
     if @business_statue.save
       flash[:success] = 'Business_statue が正常に投稿されました'
