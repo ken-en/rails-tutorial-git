@@ -20,13 +20,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @companies.each do |t| %>
+  <% @companies.each do |t| %>
+　 <% @companies.business_statues.each do |business_statue| %>
     <tr>
-      <td><%= t.name %></td>
-      <td><%= t.state %></td>
-      <td><%= t.limit_date %></td>
-      <td><%= t.work_description %></td>
-      <td><%= t.business_statue.business %></td>
+         <td><%= t.name %></td>
+         <td><%= t.state %></td>
+         <td><%= t.limit_date %></td>
+         <td><%= t.work_description %></td>
+         
+             <td><%= link_to "#{business_statue.id}", "/business_statues/#{business_statue.id}" %></td>
+             <td><%= business_statue.customer %></td>
+             <td><%= business_statue.business %></td>
+             <td><%= business_statue.date %></td>
       <td>
         <!-- 次のタスク詳細取得画面へのリンク -->
         <a href="/companys/:id/<%= t.id %>">edit</a>
