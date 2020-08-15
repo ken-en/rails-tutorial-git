@@ -17,6 +17,10 @@
     <th>処理期限日</th>
     <td><%= @business_statue.date %></td>
   </tr>
+  <tr>
+    <th>状況</th>
+    <td><%= @business_statue.situation %></td>
+  </tr>
 </table>
 
 <%= link_to 'この業務内容・状況を編集する', "/business_statues/#{@business_statue.id}/edit", class: 'btn btn-light' %>
