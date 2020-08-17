@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'chats/index'
+
   get 'companies/index'
 
   get 'companies/show'
@@ -34,7 +36,10 @@ Rails.application.routes.draw do
  get '/companies/:id', to: 'companies#show'
  put '/companies/:id', to: 'companies#update'
  delete '/companies/:id', to: 'companies#destroy'
-
+ 
+ 
+ get '/chats', to: 'chats#index'
+ resources :chats, only: [:index]
 
 get "hello" => "hello#view" #追加
 end
