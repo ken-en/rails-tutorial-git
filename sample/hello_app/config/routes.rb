@@ -2,16 +2,6 @@ Rails.application.routes.draw do
 
   get 'chats/index'
 
-  get 'companies/index'
-
-  get 'companies/show'
-
-  get 'companies/store'
-
-  get 'companies/update'
-
-  get 'companies/destroy'
-
  root 'toppages#index'
  
  get 'login', to: 'sessions#new'
@@ -31,11 +21,7 @@ Rails.application.routes.draw do
  
  resources :business_statues
  
- get '/companies', to: 'companies#index'
- post '/companies', to: 'companies#store'
- get '/companies/:id', to: 'companies#show'
- put '/companies/:id', to: 'companies#update'
- delete '/companies/:id', to: 'companies#destroy'
+
  
  
  get '/chats', to: 'chats#index'

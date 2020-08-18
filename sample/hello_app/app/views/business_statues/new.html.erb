@@ -1,15 +1,3 @@
 <h1>業務内容・状況 新規登録</h1>
 
-<%= form_for @business_statue do |form| %>
-<ul>
-  <li><%= form.label :content %><%= form.text_field :content %></li>
-  <li><%= form.label :customer %><%= form.text_field :customer %></li>
-  <li><%= form.label :business %><%= form.text_field :business %></li>
-  <li><%= form.label :date %><%= form.text_field :date %></li>
-  <li><%= form.label :situation %><%= form.text_field :situation %></li>
-  <li><input type="text" name="customer_name"/></li>
-  <li><%= form.submit %></li>
-</ul>
-<% end %>
-
-<%= link_to '業務内容・状況一覧に戻る', "/business_statues", class: "btn btn-primary" %>
+<%= render 'form', business_statue: @business_statue %>
