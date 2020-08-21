@@ -1,5 +1,7 @@
 <h2>業務内容・状況一覧</h2>
 
+
+
 <% if @business_statues.any? %>
   <table class="table table-striped">
     <thead>
@@ -18,7 +20,8 @@
           <td><%= business_statue.customer %></td>
           <td><%= business_statue.business %></td>
           <td><%= business_statue.date %></td>
-          <td><%= business_statue.situation %></td>
+          <%- look_up = {"1": "未着手","2": "作成済","3":"提出済"} %>
+          <td><%= look_up[business_statue.situation.to_s] %></td>
         </tr>
       <% end %>
     </tbody>
