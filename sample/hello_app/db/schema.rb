@@ -20,19 +20,9 @@ ActiveRecord::Schema.define(version: 20200817025001) do
     t.string "business"
     t.string "date"
     t.string "situation"
-    t.integer "company_id"
   end
 
   create_table "chats", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "companies", force: :cascade do |t|
-    t.text "name"
-    t.text "work_description"
-    t.date "limit_date"
-    t.text "state　"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
