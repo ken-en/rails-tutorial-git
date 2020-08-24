@@ -23,11 +23,11 @@
 
       <div class="form-group">
         <%= f.label :date, '処理期限日' %>
-        <%= f.text_field :date, class: 'form-control' %>
+        <%= f.date_field :date, class: 'form-control' %>
       </div>
       <div class="form-group">
         <%= f.label :situation, '状況' %>
-        <%= f.select :situation, {'未着手': 1, '作成済み': 2, '提出済み': 3}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+        <%= f.select :situation, {'未着手': '未着手', '作成済': '作成済', '提出済': '提出済'}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
       </div>
       <div class="form-group">
         <%= f.submit '登録', class: 'btn btn-primary btn-block' %>

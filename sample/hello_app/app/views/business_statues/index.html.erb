@@ -20,8 +20,7 @@
           <td><%= business_statue.customer %></td>
           <td><%= business_statue.business %></td>
           <td><%= business_statue.date %></td>
-          <%- look_up = {"1": "未着手","2": "作成済","3":"提出済"} %>
-          <td><%= look_up[business_statue.situation.to_s] %></td>
+          <td><%= business_statue.situation %></td>
         </tr>
       <% end %>
     </tbody>

@@ -1,3 +1,6 @@
 <h1>id: <%= @business_statue.id %> の業務内容・状況 編集</h1>
 
 <%= render 'form', business_statue: @business_statue %>
+
+<%= link_to '業務内容・状況 詳細に戻る', "/business_statues/#{@business_statue.id}", class: "btn btn-light" %> 
+

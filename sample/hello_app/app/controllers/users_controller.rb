@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    @user.password = "system01"
     if @user.save
       flash[:success] = 'ユーザを登録しました。'
       render :index
