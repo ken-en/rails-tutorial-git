@@ -1,8 +1,16 @@
 class BusinessStatuesController < ApplicationController
  
-  def index 
-    @business_statues = BusinessStatue.all.order(date: "ASC").page(params[:page]).per(10)
+  def index
+   @business_statues = BusinessStatue.all
+  case params[:sort]
+  when 'situation'
+   @business_statues = @business_statues.order(situation: "ASC")
+  else
+   @business_statues = @business_statues.order(date: "ASC")
   end
+  @business_statues = @business_statues.page(params[:page]).per(10)
+  end
+
   
   def show 
     @business_statue = BusinessStatue.find(params[:id])

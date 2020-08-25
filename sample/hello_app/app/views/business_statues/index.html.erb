@@ -1,5 +1,6 @@
 <h2>業務内容・状況一覧</h2>
-
+<%= link_to '処理期限日順', business_statues_path(sort: :date), class: "btn btn-primary" %>
+<%= link_to '状況順', business_statues_path(sort: :situation), class: "btn btn-primary" %>
 
 
 <% if @business_statues.any? %>
@@ -20,7 +21,7 @@
           <td><%= business_statue.customer %></td>
           <td><%= business_statue.business %></td>
           <td><%= business_statue.date %></td>
-          <td><%= business_statue.situation %></td>
+          <td<%= " style='color: red;'" if business_statue.situation == 'Not started yet' %>><%= business_statue.situation %></td>
         </tr>
       <% end %>
     </tbody>
