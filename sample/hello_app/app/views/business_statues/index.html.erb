@@ -21,7 +21,12 @@
           <td><%= business_statue.customer %></td>
           <td><%= business_statue.business %></td>
           <td><%= business_statue.date %></td>
-          <td<%= " style='color: red;'" if business_statue.situation == 'Not started yet' %>><%= business_statue.situation %></td>
+          <%- if business_statue.situation.to_s.include?('Not started yet') %>
+                <td style="color: red"><%= business_statue.situation %></td>
+          <% else %>
+                <td><%= business_statue.situation %></td>
+          <% end %>
+          
         </tr>
       <% end %>
     </tbody>
