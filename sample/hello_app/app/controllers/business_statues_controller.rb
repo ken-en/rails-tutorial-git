@@ -1,6 +1,9 @@
 class BusinessStatuesController < ApplicationController
  
   def index
+   @nearest_date = nil
+   bss = BusinessStatue.where("date IS NOT NULL AND date != ''").order(date: :asc).limit(1)
+   @nearest_date = bss.first.date if bss.present?
    @business_statues = BusinessStatue.all
   case params[:sort]
   when 'situation'
@@ -10,6 +13,8 @@ class BusinessStatuesController < ApplicationController
   end
   @business_statues = @business_statues.page(params[:page]).per(10)
   end
+
+
 
   
   def show 

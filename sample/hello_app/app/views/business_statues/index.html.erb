@@ -20,12 +20,18 @@
           <td><%= link_to "#{business_statue.id}", "/business_statues/#{business_statue.id}" %></td>
           <td><%= business_statue.customer %></td>
           <td><%= business_statue.business %></td>
-          <td><%= business_statue.date %></td>
-          <%- if business_statue.situation.to_s.include?('Not started yet') %>
-                <td style="color: red"><%= business_statue.situation %></td>
+          <% if @nearest_date == business_statue.date %>
+            <td style="background: red;"><%= business_statue.date %></td>
+          <% else %>
+            <td><%= business_statue.date %></td>
+          <% end %>
+          <%- if business_statue.situation.to_s.include?('1.未着手') %>
+                <td style="background: red;"><%= business_statue.situation %></td>
           <% else %>
                 <td><%= business_statue.situation %></td>
           <% end %>
+
+
           
         </tr>
       <% end %>
